@@ -1,0 +1,6 @@
+@Carrental.WebAPI_HostAddress = http://localhost:5283
+
+GET {{Carrental.WebAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
