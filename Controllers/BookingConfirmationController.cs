@@ -1,5 +1,6 @@
 ﻿using Carrental.WebAPI.Data;
 using Carrental.WebAPI.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,6 +11,7 @@ namespace Carrental.WebAPI.Controllers
     public class BookingConfirmationController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
+       
 
         public BookingConfirmationController(ApplicationDbContext context)
         {
@@ -18,6 +20,7 @@ namespace Carrental.WebAPI.Controllers
 
         // Get total amount for a booking
         [HttpGet("GetTotalAmount/{bookingId}")]
+        [Authorize(Roles = "User")]
         public IActionResult GetTotalAmount(int bookingId)
         {
             var booking = _context.Bookings.Include(b => b.Vehicle)
@@ -43,12 +46,15 @@ namespace Carrental.WebAPI.Controllers
         }
 
         [HttpPost("ConfirmBooking/{bookingId}")]
+        [Authorize(Roles = "User")]
         public IActionResult ConfirmBooking(int bookingId, [FromBody] BookingConfirmation confirmation)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
+
+          
 
             var booking = _context.Bookings
                 .Include(b => b.Vehicle)
@@ -98,6 +104,7 @@ namespace Carrental.WebAPI.Controllers
         }
 
         [HttpGet("GetBookingConfirmationDetails/{bookingId}")]
+        [Authorize(Roles = "User")]
         public IActionResult GetBookingConfirmationDetails(int bookingId)
         {
             var booking = _context.Bookings
@@ -107,6 +114,8 @@ namespace Carrental.WebAPI.Controllers
                     .ThenInclude(v => v.Category)
                 .Include(b => b.Vehicle)
                     .ThenInclude(v => v.Model)
+                .Include(b => b.Vehicle)
+                    .ThenInclude(v => v.VehicleImages)
                 .Include(b => b.BookingConfirmation)
                 .FirstOrDefault(b => b.Id == bookingId);
 
@@ -114,11 +123,17 @@ namespace Carrental.WebAPI.Controllers
             {
                 return NotFound("Booking not found.");
             }
+            var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+            if (booking.UserId != userId)
+            {
+                return Forbid("You are not allowed to cancel this booking.");
+            }
 
             if (booking.BookingConfirmation == null)
             {
                 return NotFound("Booking confirmation details not found.");
             }
+
 
             var response = new
             {
@@ -157,8 +172,145 @@ namespace Carrental.WebAPI.Controllers
 
             return Ok(response);
         }
+        [HttpGet("GetAllBookingConfirmationDetails")]
+        [Authorize(Roles = "User")]
+        // Retrieve all bookings for the current user
+        public IActionResult GetAllBookingConfirmationDetails()
+        {
+            
+            var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
 
-      
+            if (string.IsNullOrEmpty(userId))
+            {
+                return Unauthorized("User not authenticated.");
+            }
+
+          
+            var bookings = _context.Bookings
+                .Where(b => b.UserId == userId) 
+                .Include(b => b.Vehicle)
+                    .ThenInclude(v => v.Brand)
+                .Include(b => b.Vehicle)
+                    .ThenInclude(v => v.Category)
+                .Include(b => b.Vehicle)
+                    .ThenInclude(v => v.Model)
+                .Include(b => b.Vehicle)
+                    .ThenInclude(v => v.VehicleImages)
+                .Include(b => b.BookingConfirmation)
+                .ToList();
+
+          
+            if (!bookings.Any())
+            {
+                return NotFound("No bookings found for the user.");
+            }
+
+           
+            var response = bookings.Select(booking => new
+            {
+                BookingConfirmationInfo = new
+                {
+                    booking.BookingConfirmation.Id,
+                    booking.BookingConfirmation.TotalAmount,
+                    booking.BookingConfirmation.DiscountAmount,
+                    booking.BookingConfirmation.TotalBeforeDiscount,
+                    booking.BookingConfirmation.PaymentMethod,
+                    booking.BookingConfirmation.Email
+                },
+                BookingInfo = new
+                {
+                    booking.Id,
+                    booking.StartDate,
+                    booking.EndDate,
+                    booking.Place,
+                    booking.PhoneNumber,
+                    booking.Email,
+                    booking.Address,
+                    booking.BillingAddress,
+                    booking.InsuranceRequired,
+                    booking.SpecialRequests,
+                    Vehicle = new
+                    {
+                        booking.Vehicle.VehicleId,
+                        booking.Vehicle.Price,
+                        Model = booking.Vehicle.Model.VehicleModelName,
+                        Brand = booking.Vehicle.Brand.VehicleBrandName,
+                        Category = booking.Vehicle.Category.VehicleCategoryName,
+                        ImageUrl = $"{Request.Scheme}://{Request.Host}/api/Vehicle/images/{booking.Vehicle.VehicleImages.FirstOrDefault()?.ImagePath}"
+                    }
+                }
+            });
+
+            return Ok(response);
+        }
+
+
+        [HttpGet("GetAllBookingDetails")]
+        [Authorize(Roles = "Admin")]
+        public IActionResult GetAllBookingDetails()
+        {
+            var bookings = _context.Bookings
+                .Include(b => b.Vehicle)
+                    .ThenInclude(v => v.Brand)
+                .Include(b => b.Vehicle)
+                    .ThenInclude(v => v.Category)
+                .Include(b => b.Vehicle)
+                    .ThenInclude(v => v.Model)
+                .Include(b => b.Vehicle)
+                    .ThenInclude(v => v.VehicleImages) 
+                .Include(b => b.BookingConfirmation)
+                .ToList();
+
+            if (!bookings.Any())
+            {
+                return NotFound("No bookings found.");
+            }
+
+            var response = bookings.Select(booking => new
+            {
+                BookingConfirmationInfo = new
+                {
+                    booking.BookingConfirmation.Id,
+                    booking.BookingConfirmation.TotalAmount,
+                    booking.BookingConfirmation.DiscountAmount,
+                    booking.BookingConfirmation.TotalBeforeDiscount,
+                    booking.BookingConfirmation.PaymentMethod,
+                    booking.BookingConfirmation.Email
+                },
+                BookingInfo = new
+                {
+                    booking.Id,
+                    booking.StartDate,
+                    booking.EndDate,
+                    booking.Place,
+                    booking.PhoneNumber,
+                    booking.Email,
+                    booking.Address,
+                    booking.BillingAddress,
+                    booking.InsuranceRequired,
+                    booking.SpecialRequests,
+                    Vehicle = new
+                    {
+                        booking.Vehicle.VehicleId,
+                        booking.Vehicle.Price,
+                        Model = booking.Vehicle.Model.VehicleModelName,
+                        Brand = booking.Vehicle.Brand.VehicleBrandName,
+                        Category = booking.Vehicle.Category.VehicleCategoryName,
+                        ImageUrl = $"{Request.Scheme}://{Request.Host}/api/Vehicle/images/{booking.Vehicle.VehicleImages.FirstOrDefault()?.ImagePath}"
+                    }
+                }
+            }).ToList();
+
+            var responseWithCount = new
+            {
+                TotalCount = bookings.Count,
+                Bookings = response
+            };
+
+            return Ok(response);
+        }
+
+
         private (decimal FinalAmount, decimal DiscountAmount, decimal TotalBeforeDiscount) CalculateDynamicPrice(Booking booking)
         {
             var vehiclePrice = booking.Vehicle.Price;
@@ -209,7 +361,7 @@ namespace Carrental.WebAPI.Controllers
             switch (booking.Vehicle.Damage) 
             {
                 case "No Damage":
-                    discountPercentage += 0.10m;
+                    discountPercentage += 0.00m;
                     break;
                 case "Minor Scratches":
                     discountPercentage += 0.05m; 
@@ -223,12 +375,13 @@ namespace Carrental.WebAPI.Controllers
                     break;
                 case "Engine Issues":
                 case "Tire Damage":
-                    discountPercentage -= 0.05m; 
+                    discountPercentage += 0.05m; 
                     break;
                 case "Interior Wear and Tear":
                 case "Body Rust":
                 case "Chassis Damage":
-                    discountPercentage -= 0.10m; 
+                case "Other":
+                    discountPercentage += 0.06m; 
                     break;
                 default:
                     break;
@@ -245,5 +398,101 @@ namespace Carrental.WebAPI.Controllers
 
             return (finalPrice, discountAmount, basePrice);
         }
+
+        [HttpDelete("CancelBooking/{bookingId}")]
+        [Authorize(Roles = "User")]
+        public async Task<IActionResult> CancelBooking(int bookingId)
+        {
+            var booking = await _context.Bookings
+                .Include(b => b.BookingConfirmation)
+                .FirstOrDefaultAsync(b => b.Id == bookingId);
+
+            if (booking == null)
+            {
+                return NotFound("Booking not found.");
+            }
+
+            var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+            if (booking.UserId != userId)
+            {
+                return Forbid("You are not allowed to cancel this booking.");
+            }
+
+            decimal refundAmount = 0;  
+
+            try
+            {
+                decimal totalAmountPaid = 0;
+
+                if (booking.BookingConfirmation != null)
+                {
+                    totalAmountPaid = booking.BookingConfirmation.TotalAmount;
+                    decimal cancellationFee = totalAmountPaid * 0.02m;
+                    refundAmount = totalAmountPaid - cancellationFee;
+
+                   
+                    _context.BookingConfirmations.Remove(booking.BookingConfirmation);
+                }
+
+                _context.Bookings.Remove(booking);
+                _context.ReseedAllTables();
+     
+                await _context.SaveChangesAsync();
+
+                
+                return Ok(new
+                {
+                    Message = "Booking and confirmation canceled successfully.",
+                    RefundAmount = refundAmount
+                });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+        }
+        [HttpGet("GetAdminEarnings")]
+        [Authorize(Roles = "Admin")]
+        public IActionResult GetAdminEarnings()
+        {
+            
+            var bookings = _context.Bookings
+                .Include(b => b.BookingConfirmation)
+                .Include(b => b.Vehicle)
+                .ToList();
+
+            if (!bookings.Any())
+            {
+                return NotFound("No bookings found.");
+            }
+
+            
+            decimal totalAdminEarnings = 0;
+            decimal totalDealerEarnings = 0;
+
+            foreach (var booking in bookings)
+            {
+                if (booking.BookingConfirmation != null)
+                {
+                    decimal totalAmount = booking.BookingConfirmation.TotalAmount;
+                    decimal adminEarnings = totalAmount * 0.40m; 
+                    decimal dealerEarnings = totalAmount - adminEarnings; 
+
+                    totalAdminEarnings += adminEarnings;
+                    totalDealerEarnings += dealerEarnings;
+                }
+            }
+
+            
+            var response = new
+            {
+                TotalAdminEarnings = totalAdminEarnings,
+                TotalDealerEarnings = totalDealerEarnings
+            };
+
+            return Ok(response);
+        }
+
+
     }
 }

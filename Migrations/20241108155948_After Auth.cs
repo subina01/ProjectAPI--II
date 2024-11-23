@@ -5,25 +5,25 @@
 namespace Carrental.WebAPI.Migrations
 {
     /// <inheritdoc />
-    public partial class returnConfirmation : Migration
+    public partial class AfterAuth : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropColumn(
-                name: "LateFee",
-                table: "ReturnConfirmations");
+                name: "UserId",
+                table: "BookingConfirmations");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<decimal>(
-                name: "LateFee",
-                table: "ReturnConfirmations",
-                type: "decimal(18,2)",
+            migrationBuilder.AddColumn<string>(
+                name: "UserId",
+                table: "BookingConfirmations",
+                type: "nvarchar(max)",
                 nullable: false,
-                defaultValue: 0m);
+                defaultValue: "");
         }
     }
 }

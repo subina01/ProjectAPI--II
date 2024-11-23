@@ -40,9 +40,12 @@ namespace Carrental.WebAPI.Models
         public bool InsuranceRequired { get; set; }
 
         public string? SpecialRequests { get; set; }
+        public string UserId { get; set; }
 
         public BookingConfirmation? BookingConfirmation { get; set; }
         public ReturnConfirmation? ReturnConfirmation { get; set; }
+
+
 
         public Return? Return { get; set; }
 

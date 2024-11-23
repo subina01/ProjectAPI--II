@@ -12,6 +12,12 @@
         public string PaymentMethod { get; set; }
         public int Rating { get; set; }
 
+        public string VehicleModel { get; set; }
+        public string VehicleCategory { get; set; }
+        public string VehicleBrand { get; set; }
+        public List<string> VehicleImages { get; set; }
+        public string VehicleImageUrl { get; set; }
+
 
 
     }

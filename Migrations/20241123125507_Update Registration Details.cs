@@ -5,7 +5,7 @@
 namespace Carrental.WebAPI.Migrations
 {
     /// <inheritdoc />
-    public partial class user : Migration
+    public partial class UpdateRegistrationDetails : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

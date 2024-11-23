@@ -1,17 +1,19 @@
 ﻿using Carrental.WebAPI.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
 
 namespace Carrental.WebAPI.Data
 {
-    public partial class ApplicationDbContext : DbContext
+    public partial class ApplicationDbContext : IdentityDbContext<User>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
         }
 
-        public DbSet<User> Users { get; set; }
+    
         public DbSet<VehicleModel> VehicleModels { get; set; }
         public DbSet<VehicleCategory> VehicleCategories { get; set; }
         public DbSet<VehicleBrand> VehicleBrands { get; set; }
@@ -29,6 +31,8 @@ namespace Carrental.WebAPI.Data
             modelBuilder.Entity<Vehicle>().HasKey(v => v.VehicleId);
             modelBuilder.Entity<Booking>().HasKey(b => b.Id);
             modelBuilder.Entity<Return>().HasKey(rc => rc.Id);
+
+           
 
             modelBuilder.Entity<Vehicle>()
                 .HasOne(v => v.Model)
@@ -188,7 +192,7 @@ namespace Carrental.WebAPI.Data
         {
             try
             {
-                ReseedTable("Users", Users.Any() ? Users.Max(u => u.Id) : 0);
+               
                 ReseedTable("VehicleModels", VehicleModels.Any() ? VehicleModels.Max(vm => vm.ModelId) : 0);
                 ReseedTable("VehicleCategories", VehicleCategories.Any() ? VehicleCategories.Max(vc => vc.CategoryId) : 0);
                 ReseedTable("VehicleBrands", VehicleBrands.Any() ? VehicleBrands.Max(vb => vb.BrandId) : 0);
@@ -204,6 +208,8 @@ namespace Carrental.WebAPI.Data
                 Console.WriteLine($"Error reseeding tables: {ex.Message}");
             }
         }
+
+
 
         private void ReseedTable(string tableName, int maxId)
         {

@@ -1,5 +1,6 @@
 ﻿using Carrental.WebAPI.Data;
 using Carrental.WebAPI.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -19,6 +20,7 @@ namespace Carrental.WebAPI.Controllers
         // Get all Vehicle Models
         [HttpGet]
         [Route("GetVehicleModels")]
+        [Authorize(Roles = "Admin,User,Dealer")]
         public IActionResult GetVehicleModels()
         {
             return Ok(_context.VehicleModels.ToList());
@@ -27,6 +29,7 @@ namespace Carrental.WebAPI.Controllers
         // Get a specific Vehicle Model by ID
         [HttpGet]
         [Route("GetVehicleModel/{id}")]
+        [Authorize(Roles = "Admin,User,Dealer")]
         public IActionResult GetVehicleModel(int id)
         {
             var vehicleModel = _context.VehicleModels.FirstOrDefault(x => x.ModelId == id);
@@ -40,6 +43,7 @@ namespace Carrental.WebAPI.Controllers
         // Add a new Vehicle Model
         [HttpPost]
         [Route("AddVehicleModel")]
+        [Authorize(Roles = "Admin,Dealer")]
         public IActionResult AddVehicleModel(VehicleModel vehicleModel)
         {
             if (!ModelState.IsValid)
@@ -56,6 +60,7 @@ namespace Carrental.WebAPI.Controllers
         // Update a Vehicle Model
         [HttpPut]
         [Route("UpdateVehicleModel/{id}")]
+        [Authorize(Roles = "Admin,Dealer")]
         public IActionResult UpdateVehicleModel(int id, VehicleModel vehicleModel)
         {
             var existingVehicleModel = _context.VehicleModels.FirstOrDefault(x => x.ModelId == id);
@@ -73,6 +78,7 @@ namespace Carrental.WebAPI.Controllers
         // Delete a Vehicle Model
         [HttpDelete]
         [Route("DeleteVehicleModel/{id}")]
+        [Authorize(Roles = "Admin")]
         public IActionResult DeleteVehicleModel(int id)
         {
             var vehicleModel = _context.VehicleModels.FirstOrDefault(x => x.ModelId == id);

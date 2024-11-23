@@ -1,13 +1,9 @@
 ﻿using Carrental.WebAPI.Data;
 using Carrental.WebAPI.Models;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.IO;
-using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
+
 
 namespace Carrental.WebAPI.Controllers
 {
@@ -85,6 +81,7 @@ namespace Carrental.WebAPI.Controllers
                 return NoContent();
             }
 
+
             if (!string.IsNullOrEmpty(booking.LicenseImgPath))
             {
                 booking.LicenseImgPath = GetLicenseImageUrl(booking.LicenseImgPath);
@@ -102,8 +99,9 @@ namespace Carrental.WebAPI.Controllers
             }
             return Ok(booking);
         }
-        // Assuming you have a User property that represents the current user
+       
         [HttpPost("AddBooking")]
+        [Authorize(Roles = "User")]
         public async Task<IActionResult> AddBooking([FromForm] Carrental.WebAPI.Models.Booking booking, IFormFile licenseImage)
         {
             if (!ModelState.IsValid)
@@ -111,8 +109,18 @@ namespace Carrental.WebAPI.Controllers
                 return BadRequest(ModelState);
             }
 
-          
+            var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+            booking.UserId = userId;
+            var vehicle = _context.Vehicles.FirstOrDefault(v => v.VehicleId == booking.VehicleId);
+            if (vehicle == null)
+            {
+                return BadRequest("Vehicle not found.");
+            }
 
+            if (!vehicle.Available)
+            {
+                return BadRequest("The vehicle is currently not available for booking.");
+            }
             try
             {
                 if (licenseImage != null && licenseImage.Length > 0)
@@ -140,8 +148,11 @@ namespace Carrental.WebAPI.Controllers
                 _context.Bookings.Add(booking);
                 await _context.SaveChangesAsync();
 
+                var bookingId = booking.Id;
+
                 return Ok(new
                 {
+                    BookingId = bookingId,
                     Message = "Booking added successfully.",
                     LicenseImgUrl = $"{Request.Scheme}://{Request.Host}/Uploads/{booking.LicenseImgPath}"
                 });
@@ -153,6 +164,7 @@ namespace Carrental.WebAPI.Controllers
         }
 
         [HttpPut("UpdateBooking/{id}")]
+        [Authorize(Roles = "User")]
         public async Task<IActionResult> UpdateBooking(int id, [FromForm] Carrental.WebAPI.Models.Booking booking, IFormFile? licenseImage = null)
         {
             var existingBooking = await _context.Bookings.FindAsync(id);
@@ -160,8 +172,14 @@ namespace Carrental.WebAPI.Controllers
             {
                 return NotFound("Booking not found.");
             }
+            var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
 
-  
+            if (existingBooking.UserId != userId)
+            {
+                return Forbid("You are not allowed to modify this booking.");
+            }
+
+
             try
             {
                 existingBooking.StartDate = booking.StartDate;
@@ -212,6 +230,7 @@ namespace Carrental.WebAPI.Controllers
 
         // Delete a booking
         [HttpDelete("DeleteBooking/{id}")]
+        [Authorize(Roles = "User")]
         public async Task<IActionResult> DeleteBooking(int id)
         {
             var booking = await _context.Bookings.FindAsync(id);
@@ -232,7 +251,9 @@ namespace Carrental.WebAPI.Controllers
                 }
 
                 _context.Bookings.Remove(booking);
+                _context.ReseedAllTables();
                 await _context.SaveChangesAsync();
+                _context.ReseedAllTables();
 
                 return Ok("Booking deleted successfully.");
             }
@@ -261,6 +282,9 @@ namespace Carrental.WebAPI.Controllers
             var image = System.IO.File.ReadAllBytes(filePath);
             return File(image, "image/jpeg");
         }
+
+
+
 
         [HttpGet("images/{filename}")]
         public IActionResult GetLicenseImage(string filename)

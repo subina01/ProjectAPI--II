@@ -32,13 +32,6 @@ namespace Carrental.WebAPI.Models
         [StringLength(150)]
         public string? Address { get; set; }
 
-        [StringLength(50)]
-        [EmailAddress]
-        public string? AltEmail { get; set; }
-
-        [StringLength(50)]
-        [Phone]
-        public string? AltContact { get; set; }
 
         [StringLength(50)]
         [RegularExpression("^[A-Z]{1,2}\\d{6,7}$", ErrorMessage = "Invalid driver license number.")]

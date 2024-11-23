@@ -24,7 +24,9 @@ namespace Carrental.WebAPI.Models
         [Range(1, 5, ErrorMessage = "Rating must be between 1 and 5.")]
         public int Rating { get; set; }
 
-        
+        public string UserId { get; set; }
+        public string? ReturnLocation { get; set; }
+
         public ReturnConfirmation? ReturnConfirmation { get; set; }
     }
 }

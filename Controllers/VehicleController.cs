@@ -1,12 +1,11 @@
 ﻿using Carrental.WebAPI.Data;
 using Carrental.WebAPI.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Security.Claims;
+
 
 namespace Carrental.WebAPI.Controllers
 {
@@ -73,6 +72,7 @@ namespace Carrental.WebAPI.Controllers
             }
 
 
+
             string baseUrl = $"{Request.Scheme}://{Request.Host}/api/Vehicle/images/";
 
 
@@ -91,12 +91,16 @@ namespace Carrental.WebAPI.Controllers
         // Add a new Vehicle
         [HttpPost]
         [Route("AddVehicle")]
+        [Authorize(Roles = "Admin,Dealer")]
         public async Task<IActionResult> AddVehicle([FromForm] Vehicle vehicle, List<IFormFile> imageFiles)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
+
+            var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+            vehicle.UserId = userId;
 
             if (!_context.VehicleBrands.Any(b => b.BrandId == vehicle.BrandId) ||
                 !_context.VehicleCategories.Any(c => c.CategoryId == vehicle.CategoryId) ||
@@ -142,12 +146,19 @@ namespace Carrental.WebAPI.Controllers
 
         // Update a Vehicle
         [HttpPut("UpdateVehicle/{id}")]
+        [Authorize(Roles = "Admin,Dealer")]
         public async Task<IActionResult> UpdateVehicle(int id, [FromForm] Vehicle vehicle, [FromForm] List<IFormFile> vehicleImages)
         {
             var existingVehicle = await _context.Vehicles.Include(v => v.VehicleImages).FirstOrDefaultAsync(v => v.VehicleId == id);
             if (existingVehicle == null)
             {
                 return NotFound("Vehicle not found.");
+            }
+            var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+
+            if (existingVehicle.UserId != userId && !User.IsInRole("Admin"))
+            {
+                return Forbid("You are not authorized to update this vehicle.");
             }
 
             existingVehicle.VehicleImages.Clear();
@@ -192,6 +203,7 @@ namespace Carrental.WebAPI.Controllers
 
         // Delete a Vehicle
         [HttpDelete("DeleteVehicle/{id}")]
+        [Authorize(Roles = "Admin,Dealer")]
         public IActionResult DeleteVehicle(int id)
         {
             var vehicle = _context.Vehicles.Find(id);
@@ -199,7 +211,13 @@ namespace Carrental.WebAPI.Controllers
             {
                 return NotFound("Vehicle not found");
             }
+            var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
 
+           
+            if (vehicle.UserId != userId && !User.IsInRole("Admin"))
+            {
+                return Forbid("You are not authorized to delete this vehicle.");
+            }
             _context.Vehicles.Remove(vehicle);
             _context.SaveChanges();
             _context.ReseedAllTables();
@@ -307,8 +325,85 @@ namespace Carrental.WebAPI.Controllers
 
             return Ok(vehicles);
         }
+        // Get all Vehicles with Total Count
+        [HttpGet("GetAllVehiclesWithCount")]
+        [Authorize(Roles = "Admin")]
+        public IActionResult GetAllVehiclesWithCount()
+        {
+            var vehicles = _context.Vehicles
+                .AsNoTracking()
+                .Include(v => v.VehicleImages)
+                .Include(v => v.Category)
+                .Include(v => v.Model)
+                .Include(v => v.Brand)
+                .ToList();
 
-        // Endpoint to get vehicle images
+            string baseUrl = $"{Request.Scheme}://{Request.Host}/api/Vehicle/images/";
+
+            foreach (var vehicle in vehicles)
+            {
+                if (vehicle.VehicleImages != null && vehicle.VehicleImages.Count > 0)
+                {
+                    foreach (var image in vehicle.VehicleImages)
+                    {
+                        image.ImagePath = $"{baseUrl}{image.ImagePath}";
+                    }
+                }
+            }
+
+            var response = new
+            {
+                TotalCount = vehicles.Count,
+                Vehicles = vehicles
+            };
+
+            return Ok(response);
+        }
+
+        
+        [HttpGet("SearchVehicles")]
+        public IActionResult SearchVehicles(string query)
+        {
+            if (string.IsNullOrEmpty(query))
+            {
+                return BadRequest("Search query cannot be empty.");
+            }
+
+            var vehicles = _context.Vehicles
+                .AsNoTracking()
+                .Include(v => v.VehicleImages)
+                .Include(v => v.Category)
+                .Include(v => v.Model)
+                .Include(v => v.Brand)
+                .Where(v => v.Model.VehicleModelName.Contains(query, StringComparison.OrdinalIgnoreCase) ||
+                            v.Category.VehicleCategoryName.Contains(query, StringComparison.OrdinalIgnoreCase) ||
+                            v.Brand.VehicleBrandName.Contains(query, StringComparison.OrdinalIgnoreCase))
+                .ToList();
+
+            if (vehicles == null || vehicles.Count == 0)
+            {
+                return NotFound("No vehicles found matching the search criteria.");
+            }
+
+            string baseUrl = $"{Request.Scheme}://{Request.Host}/api/Vehicle/images/";
+
+            foreach (var vehicle in vehicles)
+            {
+                if (vehicle.VehicleImages != null && vehicle.VehicleImages.Count > 0)
+                {
+                    foreach (var image in vehicle.VehicleImages)
+                    {
+                        image.ImagePath = $"{baseUrl}{image.ImagePath}";
+                    }
+                }
+            }
+
+            return Ok(vehicles);
+        }
+
+
+
+
         [HttpGet("images/{filename}")]
         public IActionResult GetImage(string filename)
         {

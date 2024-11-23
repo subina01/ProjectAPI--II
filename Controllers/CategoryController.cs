@@ -1,5 +1,6 @@
 ﻿using Carrental.WebAPI.Data;
 using Carrental.WebAPI.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -19,6 +20,7 @@ namespace Carrental.WebAPI.Controllers
         // Get all Vehicle Categories
         [HttpGet]
         [Route("GetVehicleCategories")]
+        [Authorize(Roles = "Admin,User,Dealer")]
         public IActionResult GetVehicleCategories()
         {
             return Ok(_context.VehicleCategories.ToList());
@@ -27,6 +29,7 @@ namespace Carrental.WebAPI.Controllers
         // Get a specific Vehicle Category by ID
         [HttpGet]
         [Route("GetVehicleCategory/{id}")]
+        [Authorize(Roles = "Admin,User,Dealer")]
         public IActionResult GetVehicleCategory(int id)
         {
             var category = _context.VehicleCategories.FirstOrDefault(x => x.CategoryId == id);
@@ -40,6 +43,7 @@ namespace Carrental.WebAPI.Controllers
         // Add a new Vehicle Category
         [HttpPost]
         [Route("AddVehicleCategory")]
+        [Authorize(Roles = "Admin,Dealer")]
         public IActionResult AddVehicleCategory([FromBody] VehicleCategory category)
         {
             if (!ModelState.IsValid)
@@ -56,6 +60,7 @@ namespace Carrental.WebAPI.Controllers
         // Update an existing Vehicle Category
         [HttpPut]
         [Route("UpdateVehicleCategory/{id}")]
+        [Authorize(Roles = "Admin,Dealer")]
         public IActionResult UpdateVehicleCategory(int id, [FromBody] VehicleCategory category)
         {
             var existingCategory = _context.VehicleCategories.FirstOrDefault(x => x.CategoryId == id);
@@ -74,6 +79,7 @@ namespace Carrental.WebAPI.Controllers
         // Delete a Vehicle Category
         [HttpDelete]
         [Route("DeleteVehicleCategory/{id}")]
+        [Authorize(Roles = "Admin")]
         public IActionResult DeleteVehicleCategory(int id)
         {
             var category = _context.VehicleCategories.FirstOrDefault(x => x.CategoryId == id);

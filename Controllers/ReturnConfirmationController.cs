@@ -1,5 +1,6 @@
 ﻿using Carrental.WebAPI.Data;
 using Carrental.WebAPI.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -44,13 +45,14 @@ namespace Carrental.WebAPI.Controllers
         }
 
         [HttpPost("ConfirmReturn/{returnId}")]
+        [Authorize(Roles = "User")]
         public IActionResult ConfirmReturn(int returnId, [FromBody] ReturnConfirmation confirmation)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-
+           
             var returnDetails = _context.Returns
                 .Include(r => r.Booking)
                 .ThenInclude(b => b.Vehicle)
@@ -106,6 +108,7 @@ namespace Carrental.WebAPI.Controllers
 
 
         [HttpGet("GetReturnConfirmationDetails/{returnId}")]
+        [Authorize(Roles = "User")]
         public IActionResult GetReturnConfirmationDetails(int returnId)
         {
             var returnDetails = _context.Returns
@@ -121,6 +124,12 @@ namespace Carrental.WebAPI.Controllers
             {
                 return NotFound("Return not found.");
             }
+            var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+            if (returnDetails.UserId != userId)
+            {
+                return Forbid("You are not allowed to cancel this booking.");
+            }
+
 
             if (returnDetails.ReturnConfirmation == null)
             {
@@ -128,6 +137,59 @@ namespace Carrental.WebAPI.Controllers
             }
 
             var response = new
+            {
+                ReturnConfirmationInfo = new
+                {
+                    returnDetails.ReturnConfirmation.Id,
+                    returnDetails.ReturnConfirmation.TotalAmount,
+                    returnDetails.ReturnConfirmation.DamageFee,
+                    returnDetails.ReturnConfirmation.TotalLateFees,
+                    returnDetails.ReturnConfirmation.PaymentMethod,
+                    returnDetails.ReturnConfirmation.Email
+                },
+                ReturnInfo = new
+                {
+                    returnDetails.Id,
+                    returnDetails.ActualReturnDate,
+                    returnDetails.Booking.StartDate,
+                    returnDetails.Booking.EndDate,
+                    returnDetails.Booking.Place,
+                    returnDetails.ReturnLocation,
+                    Vehicle = new
+                    {
+                        returnDetails.Booking.Vehicle.VehicleId,
+                        returnDetails.Booking.Vehicle.Price,
+                        Model = returnDetails.Booking.Vehicle.Model.VehicleModelName,
+                        Brand = returnDetails.Booking.Vehicle.Brand.VehicleBrandName,
+                        Category = returnDetails.Booking.Vehicle.Category.VehicleCategoryName,
+                        ImageUrl = $"{Request.Scheme}://{Request.Host}/api/Vehicle/images/{returnDetails.Booking.Vehicle.VehicleImages.FirstOrDefault()?.ImagePath}"
+                    }
+                }
+            };
+
+            return Ok(response);
+        }
+
+        [HttpGet("GetAllReturnDetails")]
+        [Authorize(Roles = "Admin")]
+        public IActionResult GetAllReturnDetails()
+        {
+            var returnDetailsList = _context.Returns
+                .Include(r => r.Booking)
+                    .ThenInclude(b => b.Vehicle)
+                        .ThenInclude(v => v.VehicleImages)
+                .Include(r => r.Booking.Vehicle.Brand)
+                .Include(r => r.Booking.Vehicle.Category)
+                .Include(r => r.Booking.Vehicle.Model)
+                .Include(r => r.ReturnConfirmation)
+                .ToList();
+
+            if (!returnDetailsList.Any())
+            {
+                return NotFound("No return details found.");
+            }
+
+            var response = returnDetailsList.Select(returnDetails => new
             {
                 ReturnConfirmationInfo = new
                 {
@@ -155,7 +217,14 @@ namespace Carrental.WebAPI.Controllers
                         ImageUrl = $"{Request.Scheme}://{Request.Host}/api/Vehicle/images/{returnDetails.Booking.Vehicle.VehicleImages.FirstOrDefault()?.ImagePath}"
                     }
                 }
+            }).ToList();
+
+            var responseWithCount = new
+            {
+                TotalCount = returnDetailsList.Count,
+                ReturnDetails = response
             };
+
 
             return Ok(response);
         }
@@ -196,6 +265,7 @@ namespace Carrental.WebAPI.Controllers
                     return 500;
                 case "Engine Issues":
                 case "Tire Damage":
+                case "Other":
                     return 700;
                 default:
                     return 0;

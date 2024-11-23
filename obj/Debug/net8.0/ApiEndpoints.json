@@ -88,6 +88,11 @@
         "IsRequired": false
       },
       {
+        "Name": "Vehicle.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
         "Name": "Vehicle.Model.ModelId",
         "Type": "System.Int32",
         "IsRequired": false
@@ -164,6 +169,11 @@
       },
       {
         "Name": "SpecialRequests",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "UserId",
         "Type": "System.String",
         "IsRequired": false
       },
@@ -283,6 +293,11 @@
         "IsRequired": false
       },
       {
+        "Name": "BookingConfirmation.Booking.Vehicle.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
         "Name": "BookingConfirmation.Booking.Vehicle.Model.ModelId",
         "Type": "System.Int32",
         "IsRequired": false
@@ -359,6 +374,11 @@
       },
       {
         "Name": "BookingConfirmation.Booking.SpecialRequests",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "BookingConfirmation.Booking.UserId",
         "Type": "System.String",
         "IsRequired": false
       },
@@ -503,6 +523,11 @@
         "IsRequired": false
       },
       {
+        "Name": "BookingConfirmation.Booking.ReturnConfirmation.Return.Booking.Vehicle.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
         "Name": "BookingConfirmation.Booking.ReturnConfirmation.Return.Booking.Vehicle.Model.ModelId",
         "Type": "System.Int32",
         "IsRequired": false
@@ -583,6 +608,11 @@
         "IsRequired": false
       },
       {
+        "Name": "BookingConfirmation.Booking.ReturnConfirmation.Return.Booking.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
         "Name": "BookingConfirmation.Booking.ReturnConfirmation.Return.Booking.BookingConfirmation.TotalAmount",
         "Type": "System.Decimal",
         "IsRequired": false
@@ -658,6 +688,16 @@
         "IsRequired": false
       },
       {
+        "Name": "BookingConfirmation.Booking.ReturnConfirmation.Return.Booking.Return.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "BookingConfirmation.Booking.ReturnConfirmation.Return.Booking.Return.ReturnLocation",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
         "Name": "BookingConfirmation.Booking.ReturnConfirmation.Return.Booking.Return.ReturnConfirmation.Id",
         "Type": "System.Int32",
         "IsRequired": false
@@ -703,96 +743,6 @@
         "IsRequired": false
       },
       {
-        "Name": "BookingConfirmation.Booking.ReturnConfirmation.Return.Booking.Return.ReturnConfirmation.ReturnLocation",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.ReturnConfirmation.Return.Booking.UserId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.ReturnConfirmation.Return.Booking.User.Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.ReturnConfirmation.Return.Booking.User.UserName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.ReturnConfirmation.Return.Booking.User.FirstName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.ReturnConfirmation.Return.Booking.User.LastName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.ReturnConfirmation.Return.Booking.User.Password",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.ReturnConfirmation.Return.Booking.User.EmailId",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.ReturnConfirmation.Return.Booking.User.ContactNo",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.ReturnConfirmation.Return.Booking.User.Address",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.ReturnConfirmation.Return.Booking.User.AltEmail",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.ReturnConfirmation.Return.Booking.User.AltContact",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.ReturnConfirmation.Return.Booking.User.DriverLicInfo",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.ReturnConfirmation.Return.Booking.User.UserType",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.ReturnConfirmation.Return.Booking.User.FailedLoginAttempts",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.ReturnConfirmation.Return.Booking.User.IsBlocked",
-        "Type": "System.Boolean",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.ReturnConfirmation.Return.Booking.User.BlockedUntil",
-        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.ReturnConfirmation.Return.Booking.User.Bookings",
-        "Type": "System.Collections.Generic.ICollection\u00601[[Carrental.WebAPI.Models.Booking, Carrental.WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "IsRequired": false
-      },
-      {
         "Name": "BookingConfirmation.Booking.ReturnConfirmation.Return.ActualReturnDate",
         "Type": "System.DateTime",
         "IsRequired": false
@@ -805,6 +755,16 @@
       {
         "Name": "BookingConfirmation.Booking.ReturnConfirmation.Return.Rating",
         "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "BookingConfirmation.Booking.ReturnConfirmation.Return.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "BookingConfirmation.Booking.ReturnConfirmation.Return.ReturnLocation",
+        "Type": "System.String",
         "IsRequired": false
       },
       {
@@ -853,11 +813,6 @@
         "IsRequired": false
       },
       {
-        "Name": "BookingConfirmation.Booking.ReturnConfirmation.Return.ReturnConfirmation.ReturnLocation",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
         "Name": "BookingConfirmation.Booking.ReturnConfirmation.TotalAmount",
         "Type": "System.Decimal",
         "IsRequired": false
@@ -884,11 +839,6 @@
       },
       {
         "Name": "BookingConfirmation.Booking.ReturnConfirmation.Email",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.ReturnConfirmation.ReturnLocation",
         "Type": "System.String",
         "IsRequired": false
       },
@@ -983,6 +933,11 @@
         "IsRequired": false
       },
       {
+        "Name": "BookingConfirmation.Booking.Return.Booking.Vehicle.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
         "Name": "BookingConfirmation.Booking.Return.Booking.Vehicle.Model.ModelId",
         "Type": "System.Int32",
         "IsRequired": false
@@ -1059,6 +1014,11 @@
       },
       {
         "Name": "BookingConfirmation.Booking.Return.Booking.SpecialRequests",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "BookingConfirmation.Booking.Return.Booking.UserId",
         "Type": "System.String",
         "IsRequired": false
       },
@@ -1143,6 +1103,16 @@
         "IsRequired": false
       },
       {
+        "Name": "BookingConfirmation.Booking.Return.Booking.ReturnConfirmation.Return.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "BookingConfirmation.Booking.Return.Booking.ReturnConfirmation.Return.ReturnLocation",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
         "Name": "BookingConfirmation.Booking.Return.Booking.ReturnConfirmation.Return.ReturnConfirmation.Id",
         "Type": "System.Int32",
         "IsRequired": false
@@ -1188,11 +1158,6 @@
         "IsRequired": false
       },
       {
-        "Name": "BookingConfirmation.Booking.Return.Booking.ReturnConfirmation.Return.ReturnConfirmation.ReturnLocation",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
         "Name": "BookingConfirmation.Booking.Return.Booking.ReturnConfirmation.TotalAmount",
         "Type": "System.Decimal",
         "IsRequired": false
@@ -1223,98 +1188,8 @@
         "IsRequired": false
       },
       {
-        "Name": "BookingConfirmation.Booking.Return.Booking.ReturnConfirmation.ReturnLocation",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
         "Name": "BookingConfirmation.Booking.Return.Booking.Return",
         "Type": "Carrental.WebAPI.Models.Return",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.Booking.UserId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.Booking.User.Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.Booking.User.UserName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.Booking.User.FirstName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.Booking.User.LastName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.Booking.User.Password",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.Booking.User.EmailId",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.Booking.User.ContactNo",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.Booking.User.Address",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.Booking.User.AltEmail",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.Booking.User.AltContact",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.Booking.User.DriverLicInfo",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.Booking.User.UserType",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.Booking.User.FailedLoginAttempts",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.Booking.User.IsBlocked",
-        "Type": "System.Boolean",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.Booking.User.BlockedUntil",
-        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.Booking.User.Bookings",
-        "Type": "System.Collections.Generic.ICollection\u00601[[Carrental.WebAPI.Models.Booking, Carrental.WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "IsRequired": false
       },
       {
@@ -1330,6 +1205,16 @@
       {
         "Name": "BookingConfirmation.Booking.Return.Rating",
         "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "BookingConfirmation.Booking.Return.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "BookingConfirmation.Booking.Return.ReturnLocation",
+        "Type": "System.String",
         "IsRequired": false
       },
       {
@@ -1433,6 +1318,11 @@
         "IsRequired": false
       },
       {
+        "Name": "BookingConfirmation.Booking.Return.ReturnConfirmation.Return.Booking.Vehicle.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
         "Name": "BookingConfirmation.Booking.Return.ReturnConfirmation.Return.Booking.Vehicle.Model.ModelId",
         "Type": "System.Int32",
         "IsRequired": false
@@ -1509,6 +1399,11 @@
       },
       {
         "Name": "BookingConfirmation.Booking.Return.ReturnConfirmation.Return.Booking.SpecialRequests",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "BookingConfirmation.Booking.Return.ReturnConfirmation.Return.Booking.UserId",
         "Type": "System.String",
         "IsRequired": false
       },
@@ -1598,98 +1493,8 @@
         "IsRequired": false
       },
       {
-        "Name": "BookingConfirmation.Booking.Return.ReturnConfirmation.Return.Booking.ReturnConfirmation.ReturnLocation",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
         "Name": "BookingConfirmation.Booking.Return.ReturnConfirmation.Return.Booking.Return",
         "Type": "Carrental.WebAPI.Models.Return",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.ReturnConfirmation.Return.Booking.UserId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.ReturnConfirmation.Return.Booking.User.Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.ReturnConfirmation.Return.Booking.User.UserName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.ReturnConfirmation.Return.Booking.User.FirstName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.ReturnConfirmation.Return.Booking.User.LastName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.ReturnConfirmation.Return.Booking.User.Password",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.ReturnConfirmation.Return.Booking.User.EmailId",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.ReturnConfirmation.Return.Booking.User.ContactNo",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.ReturnConfirmation.Return.Booking.User.Address",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.ReturnConfirmation.Return.Booking.User.AltEmail",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.ReturnConfirmation.Return.Booking.User.AltContact",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.ReturnConfirmation.Return.Booking.User.DriverLicInfo",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.ReturnConfirmation.Return.Booking.User.UserType",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.ReturnConfirmation.Return.Booking.User.FailedLoginAttempts",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.ReturnConfirmation.Return.Booking.User.IsBlocked",
-        "Type": "System.Boolean",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.ReturnConfirmation.Return.Booking.User.BlockedUntil",
-        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.ReturnConfirmation.Return.Booking.User.Bookings",
-        "Type": "System.Collections.Generic.ICollection\u00601[[Carrental.WebAPI.Models.Booking, Carrental.WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "IsRequired": false
       },
       {
@@ -1705,6 +1510,16 @@
       {
         "Name": "BookingConfirmation.Booking.Return.ReturnConfirmation.Return.Rating",
         "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "BookingConfirmation.Booking.Return.ReturnConfirmation.Return.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "BookingConfirmation.Booking.Return.ReturnConfirmation.Return.ReturnLocation",
+        "Type": "System.String",
         "IsRequired": false
       },
       {
@@ -1740,96 +1555,6 @@
       {
         "Name": "BookingConfirmation.Booking.Return.ReturnConfirmation.Email",
         "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.ReturnConfirmation.ReturnLocation",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.UserId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.User.Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.User.UserName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.User.FirstName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.User.LastName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.User.Password",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.User.EmailId",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.User.ContactNo",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.User.Address",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.User.AltEmail",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.User.AltContact",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.User.DriverLicInfo",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.User.UserType",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.User.FailedLoginAttempts",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.User.IsBlocked",
-        "Type": "System.Boolean",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.User.BlockedUntil",
-        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.User.Bookings",
-        "Type": "System.Collections.Generic.ICollection\u00601[[Carrental.WebAPI.Models.Booking, Carrental.WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "IsRequired": false
       },
       {
@@ -1933,6 +1658,11 @@
         "IsRequired": false
       },
       {
+        "Name": "ReturnConfirmation.Return.Booking.Vehicle.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
         "Name": "ReturnConfirmation.Return.Booking.Vehicle.Model.ModelId",
         "Type": "System.Int32",
         "IsRequired": false
@@ -2009,6 +1739,11 @@
       },
       {
         "Name": "ReturnConfirmation.Return.Booking.SpecialRequests",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ReturnConfirmation.Return.Booking.UserId",
         "Type": "System.String",
         "IsRequired": false
       },
@@ -2128,6 +1863,11 @@
         "IsRequired": false
       },
       {
+        "Name": "ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.Vehicle.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
         "Name": "ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.Vehicle.Model.ModelId",
         "Type": "System.Int32",
         "IsRequired": false
@@ -2208,6 +1948,11 @@
         "IsRequired": false
       },
       {
+        "Name": "ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
         "Name": "ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.BookingConfirmation",
         "Type": "BookingConfirmation",
         "IsRequired": false
@@ -2258,11 +2003,6 @@
         "IsRequired": false
       },
       {
-        "Name": "ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.ReturnConfirmation.ReturnLocation",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
         "Name": "ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.Return.Id",
         "Type": "System.Int32",
         "IsRequired": false
@@ -2290,6 +2030,16 @@
       {
         "Name": "ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.Return.Rating",
         "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.Return.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.Return.ReturnLocation",
+        "Type": "System.String",
         "IsRequired": false
       },
       {
@@ -2338,96 +2088,6 @@
         "IsRequired": false
       },
       {
-        "Name": "ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.Return.ReturnConfirmation.ReturnLocation",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.UserId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.UserName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.FirstName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.LastName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.Password",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.EmailId",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.ContactNo",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.Address",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.AltEmail",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.AltContact",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.DriverLicInfo",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.UserType",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.FailedLoginAttempts",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.IsBlocked",
-        "Type": "System.Boolean",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.BlockedUntil",
-        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.Bookings",
-        "Type": "System.Collections.Generic.ICollection\u00601[[Carrental.WebAPI.Models.Booking, Carrental.WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "IsRequired": false
-      },
-      {
         "Name": "ReturnConfirmation.Return.Booking.ReturnConfirmation.Id",
         "Type": "System.Int32",
         "IsRequired": false
@@ -2473,11 +2133,6 @@
         "IsRequired": false
       },
       {
-        "Name": "ReturnConfirmation.Return.Booking.ReturnConfirmation.ReturnLocation",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
         "Name": "ReturnConfirmation.Return.Booking.Return.Id",
         "Type": "System.Int32",
         "IsRequired": false
@@ -2505,6 +2160,16 @@
       {
         "Name": "ReturnConfirmation.Return.Booking.Return.Rating",
         "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "ReturnConfirmation.Return.Booking.Return.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ReturnConfirmation.Return.Booking.Return.ReturnLocation",
+        "Type": "System.String",
         "IsRequired": false
       },
       {
@@ -2553,96 +2218,6 @@
         "IsRequired": false
       },
       {
-        "Name": "ReturnConfirmation.Return.Booking.Return.ReturnConfirmation.ReturnLocation",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.UserId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.User.Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.User.UserName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.User.FirstName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.User.LastName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.User.Password",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.User.EmailId",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.User.ContactNo",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.User.Address",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.User.AltEmail",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.User.AltContact",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.User.DriverLicInfo",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.User.UserType",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.User.FailedLoginAttempts",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.User.IsBlocked",
-        "Type": "System.Boolean",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.User.BlockedUntil",
-        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.User.Bookings",
-        "Type": "System.Collections.Generic.ICollection\u00601[[Carrental.WebAPI.Models.Booking, Carrental.WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "IsRequired": false
-      },
-      {
         "Name": "ReturnConfirmation.Return.ActualReturnDate",
         "Type": "System.DateTime",
         "IsRequired": false
@@ -2655,6 +2230,16 @@
       {
         "Name": "ReturnConfirmation.Return.Rating",
         "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "ReturnConfirmation.Return.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ReturnConfirmation.Return.ReturnLocation",
+        "Type": "System.String",
         "IsRequired": false
       },
       {
@@ -2703,11 +2288,6 @@
         "IsRequired": false
       },
       {
-        "Name": "ReturnConfirmation.Return.ReturnConfirmation.ReturnLocation",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
         "Name": "ReturnConfirmation.TotalAmount",
         "Type": "System.Decimal",
         "IsRequired": false
@@ -2734,11 +2314,6 @@
       },
       {
         "Name": "ReturnConfirmation.Email",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.ReturnLocation",
         "Type": "System.String",
         "IsRequired": false
       },
@@ -2833,6 +2408,11 @@
         "IsRequired": false
       },
       {
+        "Name": "Return.Booking.Vehicle.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
         "Name": "Return.Booking.Vehicle.Model.ModelId",
         "Type": "System.Int32",
         "IsRequired": false
@@ -2909,6 +2489,11 @@
       },
       {
         "Name": "Return.Booking.SpecialRequests",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Return.Booking.UserId",
         "Type": "System.String",
         "IsRequired": false
       },
@@ -3028,6 +2613,11 @@
         "IsRequired": false
       },
       {
+        "Name": "Return.Booking.BookingConfirmation.Booking.Vehicle.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
         "Name": "Return.Booking.BookingConfirmation.Booking.Vehicle.Model.ModelId",
         "Type": "System.Int32",
         "IsRequired": false
@@ -3108,6 +2698,11 @@
         "IsRequired": false
       },
       {
+        "Name": "Return.Booking.BookingConfirmation.Booking.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
         "Name": "Return.Booking.BookingConfirmation.Booking.BookingConfirmation",
         "Type": "BookingConfirmation",
         "IsRequired": false
@@ -3150,6 +2745,16 @@
       {
         "Name": "Return.Booking.BookingConfirmation.Booking.ReturnConfirmation.Return.Rating",
         "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Return.Booking.BookingConfirmation.Booking.ReturnConfirmation.Return.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Return.Booking.BookingConfirmation.Booking.ReturnConfirmation.Return.ReturnLocation",
+        "Type": "System.String",
         "IsRequired": false
       },
       {
@@ -3198,11 +2803,6 @@
         "IsRequired": false
       },
       {
-        "Name": "Return.Booking.BookingConfirmation.Booking.ReturnConfirmation.Return.ReturnConfirmation.ReturnLocation",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
         "Name": "Return.Booking.BookingConfirmation.Booking.ReturnConfirmation.TotalAmount",
         "Type": "System.Decimal",
         "IsRequired": false
@@ -3229,11 +2829,6 @@
       },
       {
         "Name": "Return.Booking.BookingConfirmation.Booking.ReturnConfirmation.Email",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.BookingConfirmation.Booking.ReturnConfirmation.ReturnLocation",
         "Type": "System.String",
         "IsRequired": false
       },
@@ -3265,6 +2860,16 @@
       {
         "Name": "Return.Booking.BookingConfirmation.Booking.Return.Rating",
         "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Return.Booking.BookingConfirmation.Booking.Return.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Return.Booking.BookingConfirmation.Booking.Return.ReturnLocation",
+        "Type": "System.String",
         "IsRequired": false
       },
       {
@@ -3308,6 +2913,16 @@
         "IsRequired": false
       },
       {
+        "Name": "Return.Booking.BookingConfirmation.Booking.Return.ReturnConfirmation.Return.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Return.Booking.BookingConfirmation.Booking.Return.ReturnConfirmation.Return.ReturnLocation",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
         "Name": "Return.Booking.BookingConfirmation.Booking.Return.ReturnConfirmation.Return.ReturnConfirmation",
         "Type": "Carrental.WebAPI.Models.ReturnConfirmation",
         "IsRequired": false
@@ -3340,96 +2955,6 @@
       {
         "Name": "Return.Booking.BookingConfirmation.Booking.Return.ReturnConfirmation.Email",
         "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.BookingConfirmation.Booking.Return.ReturnConfirmation.ReturnLocation",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.BookingConfirmation.Booking.UserId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.BookingConfirmation.Booking.User.Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.BookingConfirmation.Booking.User.UserName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.BookingConfirmation.Booking.User.FirstName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.BookingConfirmation.Booking.User.LastName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.BookingConfirmation.Booking.User.Password",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.BookingConfirmation.Booking.User.EmailId",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.BookingConfirmation.Booking.User.ContactNo",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.BookingConfirmation.Booking.User.Address",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.BookingConfirmation.Booking.User.AltEmail",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.BookingConfirmation.Booking.User.AltContact",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.BookingConfirmation.Booking.User.DriverLicInfo",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.BookingConfirmation.Booking.User.UserType",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.BookingConfirmation.Booking.User.FailedLoginAttempts",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.BookingConfirmation.Booking.User.IsBlocked",
-        "Type": "System.Boolean",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.BookingConfirmation.Booking.User.BlockedUntil",
-        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.BookingConfirmation.Booking.User.Bookings",
-        "Type": "System.Collections.Generic.ICollection\u00601[[Carrental.WebAPI.Models.Booking, Carrental.WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "IsRequired": false
       },
       {
@@ -3470,6 +2995,16 @@
       {
         "Name": "Return.Booking.ReturnConfirmation.Return.Rating",
         "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Return.Booking.ReturnConfirmation.Return.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Return.Booking.ReturnConfirmation.Return.ReturnLocation",
+        "Type": "System.String",
         "IsRequired": false
       },
       {
@@ -3518,11 +3053,6 @@
         "IsRequired": false
       },
       {
-        "Name": "Return.Booking.ReturnConfirmation.Return.ReturnConfirmation.ReturnLocation",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
         "Name": "Return.Booking.ReturnConfirmation.TotalAmount",
         "Type": "System.Decimal",
         "IsRequired": false
@@ -3549,11 +3079,6 @@
       },
       {
         "Name": "Return.Booking.ReturnConfirmation.Email",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.ReturnConfirmation.ReturnLocation",
         "Type": "System.String",
         "IsRequired": false
       },
@@ -3585,6 +3110,16 @@
       {
         "Name": "Return.Booking.Return.Rating",
         "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Return.Booking.Return.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Return.Booking.Return.ReturnLocation",
+        "Type": "System.String",
         "IsRequired": false
       },
       {
@@ -3628,6 +3163,16 @@
         "IsRequired": false
       },
       {
+        "Name": "Return.Booking.Return.ReturnConfirmation.Return.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Return.Booking.Return.ReturnConfirmation.Return.ReturnLocation",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
         "Name": "Return.Booking.Return.ReturnConfirmation.Return.ReturnConfirmation",
         "Type": "Carrental.WebAPI.Models.ReturnConfirmation",
         "IsRequired": false
@@ -3663,96 +3208,6 @@
         "IsRequired": false
       },
       {
-        "Name": "Return.Booking.Return.ReturnConfirmation.ReturnLocation",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.UserId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.User.Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.User.UserName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.User.FirstName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.User.LastName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.User.Password",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.User.EmailId",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.User.ContactNo",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.User.Address",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.User.AltEmail",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.User.AltContact",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.User.DriverLicInfo",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.User.UserType",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.User.FailedLoginAttempts",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.User.IsBlocked",
-        "Type": "System.Boolean",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.User.BlockedUntil",
-        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.User.Bookings",
-        "Type": "System.Collections.Generic.ICollection\u00601[[Carrental.WebAPI.Models.Booking, Carrental.WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "IsRequired": false
-      },
-      {
         "Name": "Return.ActualReturnDate",
         "Type": "System.DateTime",
         "IsRequired": false
@@ -3765,6 +3220,16 @@
       {
         "Name": "Return.Rating",
         "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Return.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Return.ReturnLocation",
+        "Type": "System.String",
         "IsRequired": false
       },
       {
@@ -3868,6 +3333,11 @@
         "IsRequired": false
       },
       {
+        "Name": "Return.ReturnConfirmation.Return.Booking.Vehicle.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
         "Name": "Return.ReturnConfirmation.Return.Booking.Vehicle.Model.ModelId",
         "Type": "System.Int32",
         "IsRequired": false
@@ -3944,6 +3414,11 @@
       },
       {
         "Name": "Return.ReturnConfirmation.Return.Booking.SpecialRequests",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Return.ReturnConfirmation.Return.Booking.UserId",
         "Type": "System.String",
         "IsRequired": false
       },
@@ -4063,6 +3538,11 @@
         "IsRequired": false
       },
       {
+        "Name": "Return.ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.Vehicle.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
         "Name": "Return.ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.Vehicle.Model.ModelId",
         "Type": "System.Int32",
         "IsRequired": false
@@ -4143,6 +3623,11 @@
         "IsRequired": false
       },
       {
+        "Name": "Return.ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
         "Name": "Return.ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.BookingConfirmation",
         "Type": "BookingConfirmation",
         "IsRequired": false
@@ -4193,11 +3678,6 @@
         "IsRequired": false
       },
       {
-        "Name": "Return.ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.ReturnConfirmation.ReturnLocation",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
         "Name": "Return.ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.Return.Id",
         "Type": "System.Int32",
         "IsRequired": false
@@ -4228,93 +3708,18 @@
         "IsRequired": false
       },
       {
+        "Name": "Return.ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.Return.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Return.ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.Return.ReturnLocation",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
         "Name": "Return.ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.Return.ReturnConfirmation",
         "Type": "Carrental.WebAPI.Models.ReturnConfirmation",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.UserId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.UserName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.FirstName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.LastName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.Password",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.EmailId",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.ContactNo",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.Address",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.AltEmail",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.AltContact",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.DriverLicInfo",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.UserType",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.FailedLoginAttempts",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.IsBlocked",
-        "Type": "System.Boolean",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.BlockedUntil",
-        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.Bookings",
-        "Type": "System.Collections.Generic.ICollection\u00601[[Carrental.WebAPI.Models.Booking, Carrental.WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "IsRequired": false
       },
       {
@@ -4363,11 +3768,6 @@
         "IsRequired": false
       },
       {
-        "Name": "Return.ReturnConfirmation.Return.Booking.ReturnConfirmation.ReturnLocation",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
         "Name": "Return.ReturnConfirmation.Return.Booking.Return.Id",
         "Type": "System.Int32",
         "IsRequired": false
@@ -4398,93 +3798,18 @@
         "IsRequired": false
       },
       {
+        "Name": "Return.ReturnConfirmation.Return.Booking.Return.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Return.ReturnConfirmation.Return.Booking.Return.ReturnLocation",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
         "Name": "Return.ReturnConfirmation.Return.Booking.Return.ReturnConfirmation",
         "Type": "Carrental.WebAPI.Models.ReturnConfirmation",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.UserId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.User.Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.User.UserName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.User.FirstName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.User.LastName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.User.Password",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.User.EmailId",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.User.ContactNo",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.User.Address",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.User.AltEmail",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.User.AltContact",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.User.DriverLicInfo",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.User.UserType",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.User.FailedLoginAttempts",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.User.IsBlocked",
-        "Type": "System.Boolean",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.User.BlockedUntil",
-        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.User.Bookings",
-        "Type": "System.Collections.Generic.ICollection\u00601[[Carrental.WebAPI.Models.Booking, Carrental.WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "IsRequired": false
       },
       {
@@ -4500,6 +3825,16 @@
       {
         "Name": "Return.ReturnConfirmation.Return.Rating",
         "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Return.ReturnConfirmation.Return.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Return.ReturnConfirmation.Return.ReturnLocation",
+        "Type": "System.String",
         "IsRequired": false
       },
       {
@@ -4535,96 +3870,6 @@
       {
         "Name": "Return.ReturnConfirmation.Email",
         "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.ReturnLocation",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "UserId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "User.Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "User.UserName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "User.FirstName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "User.LastName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "User.Password",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "User.EmailId",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "User.ContactNo",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "User.Address",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "User.AltEmail",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "User.AltContact",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "User.DriverLicInfo",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "User.UserType",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "User.FailedLoginAttempts",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "User.IsBlocked",
-        "Type": "System.Boolean",
-        "IsRequired": false
-      },
-      {
-        "Name": "User.BlockedUntil",
-        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      },
-      {
-        "Name": "User.Bookings",
-        "Type": "System.Collections.Generic.ICollection\u00601[[Carrental.WebAPI.Models.Booking, Carrental.WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "IsRequired": false
       },
       {
@@ -4803,6 +4048,11 @@
         "IsRequired": false
       },
       {
+        "Name": "Vehicle.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
         "Name": "Vehicle.Model.ModelId",
         "Type": "System.Int32",
         "IsRequired": false
@@ -4879,6 +4129,11 @@
       },
       {
         "Name": "SpecialRequests",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "UserId",
         "Type": "System.String",
         "IsRequired": false
       },
@@ -4998,6 +4253,11 @@
         "IsRequired": false
       },
       {
+        "Name": "BookingConfirmation.Booking.Vehicle.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
         "Name": "BookingConfirmation.Booking.Vehicle.Model.ModelId",
         "Type": "System.Int32",
         "IsRequired": false
@@ -5074,6 +4334,11 @@
       },
       {
         "Name": "BookingConfirmation.Booking.SpecialRequests",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "BookingConfirmation.Booking.UserId",
         "Type": "System.String",
         "IsRequired": false
       },
@@ -5218,6 +4483,11 @@
         "IsRequired": false
       },
       {
+        "Name": "BookingConfirmation.Booking.ReturnConfirmation.Return.Booking.Vehicle.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
         "Name": "BookingConfirmation.Booking.ReturnConfirmation.Return.Booking.Vehicle.Model.ModelId",
         "Type": "System.Int32",
         "IsRequired": false
@@ -5298,6 +4568,11 @@
         "IsRequired": false
       },
       {
+        "Name": "BookingConfirmation.Booking.ReturnConfirmation.Return.Booking.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
         "Name": "BookingConfirmation.Booking.ReturnConfirmation.Return.Booking.BookingConfirmation.TotalAmount",
         "Type": "System.Decimal",
         "IsRequired": false
@@ -5373,6 +4648,16 @@
         "IsRequired": false
       },
       {
+        "Name": "BookingConfirmation.Booking.ReturnConfirmation.Return.Booking.Return.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "BookingConfirmation.Booking.ReturnConfirmation.Return.Booking.Return.ReturnLocation",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
         "Name": "BookingConfirmation.Booking.ReturnConfirmation.Return.Booking.Return.ReturnConfirmation.Id",
         "Type": "System.Int32",
         "IsRequired": false
@@ -5418,96 +4703,6 @@
         "IsRequired": false
       },
       {
-        "Name": "BookingConfirmation.Booking.ReturnConfirmation.Return.Booking.Return.ReturnConfirmation.ReturnLocation",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.ReturnConfirmation.Return.Booking.UserId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.ReturnConfirmation.Return.Booking.User.Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.ReturnConfirmation.Return.Booking.User.UserName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.ReturnConfirmation.Return.Booking.User.FirstName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.ReturnConfirmation.Return.Booking.User.LastName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.ReturnConfirmation.Return.Booking.User.Password",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.ReturnConfirmation.Return.Booking.User.EmailId",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.ReturnConfirmation.Return.Booking.User.ContactNo",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.ReturnConfirmation.Return.Booking.User.Address",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.ReturnConfirmation.Return.Booking.User.AltEmail",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.ReturnConfirmation.Return.Booking.User.AltContact",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.ReturnConfirmation.Return.Booking.User.DriverLicInfo",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.ReturnConfirmation.Return.Booking.User.UserType",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.ReturnConfirmation.Return.Booking.User.FailedLoginAttempts",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.ReturnConfirmation.Return.Booking.User.IsBlocked",
-        "Type": "System.Boolean",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.ReturnConfirmation.Return.Booking.User.BlockedUntil",
-        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.ReturnConfirmation.Return.Booking.User.Bookings",
-        "Type": "System.Collections.Generic.ICollection\u00601[[Carrental.WebAPI.Models.Booking, Carrental.WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "IsRequired": false
-      },
-      {
         "Name": "BookingConfirmation.Booking.ReturnConfirmation.Return.ActualReturnDate",
         "Type": "System.DateTime",
         "IsRequired": false
@@ -5520,6 +4715,16 @@
       {
         "Name": "BookingConfirmation.Booking.ReturnConfirmation.Return.Rating",
         "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "BookingConfirmation.Booking.ReturnConfirmation.Return.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "BookingConfirmation.Booking.ReturnConfirmation.Return.ReturnLocation",
+        "Type": "System.String",
         "IsRequired": false
       },
       {
@@ -5568,11 +4773,6 @@
         "IsRequired": false
       },
       {
-        "Name": "BookingConfirmation.Booking.ReturnConfirmation.Return.ReturnConfirmation.ReturnLocation",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
         "Name": "BookingConfirmation.Booking.ReturnConfirmation.TotalAmount",
         "Type": "System.Decimal",
         "IsRequired": false
@@ -5599,11 +4799,6 @@
       },
       {
         "Name": "BookingConfirmation.Booking.ReturnConfirmation.Email",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.ReturnConfirmation.ReturnLocation",
         "Type": "System.String",
         "IsRequired": false
       },
@@ -5698,6 +4893,11 @@
         "IsRequired": false
       },
       {
+        "Name": "BookingConfirmation.Booking.Return.Booking.Vehicle.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
         "Name": "BookingConfirmation.Booking.Return.Booking.Vehicle.Model.ModelId",
         "Type": "System.Int32",
         "IsRequired": false
@@ -5774,6 +4974,11 @@
       },
       {
         "Name": "BookingConfirmation.Booking.Return.Booking.SpecialRequests",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "BookingConfirmation.Booking.Return.Booking.UserId",
         "Type": "System.String",
         "IsRequired": false
       },
@@ -5858,6 +5063,16 @@
         "IsRequired": false
       },
       {
+        "Name": "BookingConfirmation.Booking.Return.Booking.ReturnConfirmation.Return.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "BookingConfirmation.Booking.Return.Booking.ReturnConfirmation.Return.ReturnLocation",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
         "Name": "BookingConfirmation.Booking.Return.Booking.ReturnConfirmation.Return.ReturnConfirmation.Id",
         "Type": "System.Int32",
         "IsRequired": false
@@ -5903,11 +5118,6 @@
         "IsRequired": false
       },
       {
-        "Name": "BookingConfirmation.Booking.Return.Booking.ReturnConfirmation.Return.ReturnConfirmation.ReturnLocation",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
         "Name": "BookingConfirmation.Booking.Return.Booking.ReturnConfirmation.TotalAmount",
         "Type": "System.Decimal",
         "IsRequired": false
@@ -5938,98 +5148,8 @@
         "IsRequired": false
       },
       {
-        "Name": "BookingConfirmation.Booking.Return.Booking.ReturnConfirmation.ReturnLocation",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
         "Name": "BookingConfirmation.Booking.Return.Booking.Return",
         "Type": "Carrental.WebAPI.Models.Return",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.Booking.UserId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.Booking.User.Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.Booking.User.UserName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.Booking.User.FirstName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.Booking.User.LastName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.Booking.User.Password",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.Booking.User.EmailId",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.Booking.User.ContactNo",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.Booking.User.Address",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.Booking.User.AltEmail",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.Booking.User.AltContact",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.Booking.User.DriverLicInfo",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.Booking.User.UserType",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.Booking.User.FailedLoginAttempts",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.Booking.User.IsBlocked",
-        "Type": "System.Boolean",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.Booking.User.BlockedUntil",
-        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.Booking.User.Bookings",
-        "Type": "System.Collections.Generic.ICollection\u00601[[Carrental.WebAPI.Models.Booking, Carrental.WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "IsRequired": false
       },
       {
@@ -6045,6 +5165,16 @@
       {
         "Name": "BookingConfirmation.Booking.Return.Rating",
         "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "BookingConfirmation.Booking.Return.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "BookingConfirmation.Booking.Return.ReturnLocation",
+        "Type": "System.String",
         "IsRequired": false
       },
       {
@@ -6148,6 +5278,11 @@
         "IsRequired": false
       },
       {
+        "Name": "BookingConfirmation.Booking.Return.ReturnConfirmation.Return.Booking.Vehicle.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
         "Name": "BookingConfirmation.Booking.Return.ReturnConfirmation.Return.Booking.Vehicle.Model.ModelId",
         "Type": "System.Int32",
         "IsRequired": false
@@ -6224,6 +5359,11 @@
       },
       {
         "Name": "BookingConfirmation.Booking.Return.ReturnConfirmation.Return.Booking.SpecialRequests",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "BookingConfirmation.Booking.Return.ReturnConfirmation.Return.Booking.UserId",
         "Type": "System.String",
         "IsRequired": false
       },
@@ -6313,98 +5453,8 @@
         "IsRequired": false
       },
       {
-        "Name": "BookingConfirmation.Booking.Return.ReturnConfirmation.Return.Booking.ReturnConfirmation.ReturnLocation",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
         "Name": "BookingConfirmation.Booking.Return.ReturnConfirmation.Return.Booking.Return",
         "Type": "Carrental.WebAPI.Models.Return",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.ReturnConfirmation.Return.Booking.UserId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.ReturnConfirmation.Return.Booking.User.Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.ReturnConfirmation.Return.Booking.User.UserName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.ReturnConfirmation.Return.Booking.User.FirstName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.ReturnConfirmation.Return.Booking.User.LastName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.ReturnConfirmation.Return.Booking.User.Password",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.ReturnConfirmation.Return.Booking.User.EmailId",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.ReturnConfirmation.Return.Booking.User.ContactNo",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.ReturnConfirmation.Return.Booking.User.Address",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.ReturnConfirmation.Return.Booking.User.AltEmail",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.ReturnConfirmation.Return.Booking.User.AltContact",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.ReturnConfirmation.Return.Booking.User.DriverLicInfo",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.ReturnConfirmation.Return.Booking.User.UserType",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.ReturnConfirmation.Return.Booking.User.FailedLoginAttempts",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.ReturnConfirmation.Return.Booking.User.IsBlocked",
-        "Type": "System.Boolean",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.ReturnConfirmation.Return.Booking.User.BlockedUntil",
-        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.ReturnConfirmation.Return.Booking.User.Bookings",
-        "Type": "System.Collections.Generic.ICollection\u00601[[Carrental.WebAPI.Models.Booking, Carrental.WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "IsRequired": false
       },
       {
@@ -6420,6 +5470,16 @@
       {
         "Name": "BookingConfirmation.Booking.Return.ReturnConfirmation.Return.Rating",
         "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "BookingConfirmation.Booking.Return.ReturnConfirmation.Return.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "BookingConfirmation.Booking.Return.ReturnConfirmation.Return.ReturnLocation",
+        "Type": "System.String",
         "IsRequired": false
       },
       {
@@ -6455,96 +5515,6 @@
       {
         "Name": "BookingConfirmation.Booking.Return.ReturnConfirmation.Email",
         "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.Return.ReturnConfirmation.ReturnLocation",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.UserId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.User.Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.User.UserName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.User.FirstName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.User.LastName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.User.Password",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.User.EmailId",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.User.ContactNo",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.User.Address",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.User.AltEmail",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.User.AltContact",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.User.DriverLicInfo",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.User.UserType",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.User.FailedLoginAttempts",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.User.IsBlocked",
-        "Type": "System.Boolean",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.User.BlockedUntil",
-        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      },
-      {
-        "Name": "BookingConfirmation.Booking.User.Bookings",
-        "Type": "System.Collections.Generic.ICollection\u00601[[Carrental.WebAPI.Models.Booking, Carrental.WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "IsRequired": false
       },
       {
@@ -6648,6 +5618,11 @@
         "IsRequired": false
       },
       {
+        "Name": "ReturnConfirmation.Return.Booking.Vehicle.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
         "Name": "ReturnConfirmation.Return.Booking.Vehicle.Model.ModelId",
         "Type": "System.Int32",
         "IsRequired": false
@@ -6724,6 +5699,11 @@
       },
       {
         "Name": "ReturnConfirmation.Return.Booking.SpecialRequests",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ReturnConfirmation.Return.Booking.UserId",
         "Type": "System.String",
         "IsRequired": false
       },
@@ -6843,6 +5823,11 @@
         "IsRequired": false
       },
       {
+        "Name": "ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.Vehicle.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
         "Name": "ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.Vehicle.Model.ModelId",
         "Type": "System.Int32",
         "IsRequired": false
@@ -6923,6 +5908,11 @@
         "IsRequired": false
       },
       {
+        "Name": "ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
         "Name": "ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.BookingConfirmation",
         "Type": "BookingConfirmation",
         "IsRequired": false
@@ -6973,11 +5963,6 @@
         "IsRequired": false
       },
       {
-        "Name": "ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.ReturnConfirmation.ReturnLocation",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
         "Name": "ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.Return.Id",
         "Type": "System.Int32",
         "IsRequired": false
@@ -7005,6 +5990,16 @@
       {
         "Name": "ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.Return.Rating",
         "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.Return.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.Return.ReturnLocation",
+        "Type": "System.String",
         "IsRequired": false
       },
       {
@@ -7053,96 +6048,6 @@
         "IsRequired": false
       },
       {
-        "Name": "ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.Return.ReturnConfirmation.ReturnLocation",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.UserId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.UserName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.FirstName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.LastName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.Password",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.EmailId",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.ContactNo",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.Address",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.AltEmail",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.AltContact",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.DriverLicInfo",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.UserType",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.FailedLoginAttempts",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.IsBlocked",
-        "Type": "System.Boolean",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.BlockedUntil",
-        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.Bookings",
-        "Type": "System.Collections.Generic.ICollection\u00601[[Carrental.WebAPI.Models.Booking, Carrental.WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "IsRequired": false
-      },
-      {
         "Name": "ReturnConfirmation.Return.Booking.ReturnConfirmation.Id",
         "Type": "System.Int32",
         "IsRequired": false
@@ -7188,11 +6093,6 @@
         "IsRequired": false
       },
       {
-        "Name": "ReturnConfirmation.Return.Booking.ReturnConfirmation.ReturnLocation",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
         "Name": "ReturnConfirmation.Return.Booking.Return.Id",
         "Type": "System.Int32",
         "IsRequired": false
@@ -7220,6 +6120,16 @@
       {
         "Name": "ReturnConfirmation.Return.Booking.Return.Rating",
         "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "ReturnConfirmation.Return.Booking.Return.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ReturnConfirmation.Return.Booking.Return.ReturnLocation",
+        "Type": "System.String",
         "IsRequired": false
       },
       {
@@ -7268,96 +6178,6 @@
         "IsRequired": false
       },
       {
-        "Name": "ReturnConfirmation.Return.Booking.Return.ReturnConfirmation.ReturnLocation",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.UserId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.User.Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.User.UserName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.User.FirstName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.User.LastName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.User.Password",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.User.EmailId",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.User.ContactNo",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.User.Address",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.User.AltEmail",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.User.AltContact",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.User.DriverLicInfo",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.User.UserType",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.User.FailedLoginAttempts",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.User.IsBlocked",
-        "Type": "System.Boolean",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.User.BlockedUntil",
-        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.Return.Booking.User.Bookings",
-        "Type": "System.Collections.Generic.ICollection\u00601[[Carrental.WebAPI.Models.Booking, Carrental.WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "IsRequired": false
-      },
-      {
         "Name": "ReturnConfirmation.Return.ActualReturnDate",
         "Type": "System.DateTime",
         "IsRequired": false
@@ -7370,6 +6190,16 @@
       {
         "Name": "ReturnConfirmation.Return.Rating",
         "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "ReturnConfirmation.Return.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ReturnConfirmation.Return.ReturnLocation",
+        "Type": "System.String",
         "IsRequired": false
       },
       {
@@ -7418,11 +6248,6 @@
         "IsRequired": false
       },
       {
-        "Name": "ReturnConfirmation.Return.ReturnConfirmation.ReturnLocation",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
         "Name": "ReturnConfirmation.TotalAmount",
         "Type": "System.Decimal",
         "IsRequired": false
@@ -7449,11 +6274,6 @@
       },
       {
         "Name": "ReturnConfirmation.Email",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "ReturnConfirmation.ReturnLocation",
         "Type": "System.String",
         "IsRequired": false
       },
@@ -7548,6 +6368,11 @@
         "IsRequired": false
       },
       {
+        "Name": "Return.Booking.Vehicle.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
         "Name": "Return.Booking.Vehicle.Model.ModelId",
         "Type": "System.Int32",
         "IsRequired": false
@@ -7624,6 +6449,11 @@
       },
       {
         "Name": "Return.Booking.SpecialRequests",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Return.Booking.UserId",
         "Type": "System.String",
         "IsRequired": false
       },
@@ -7743,6 +6573,11 @@
         "IsRequired": false
       },
       {
+        "Name": "Return.Booking.BookingConfirmation.Booking.Vehicle.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
         "Name": "Return.Booking.BookingConfirmation.Booking.Vehicle.Model.ModelId",
         "Type": "System.Int32",
         "IsRequired": false
@@ -7823,6 +6658,11 @@
         "IsRequired": false
       },
       {
+        "Name": "Return.Booking.BookingConfirmation.Booking.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
         "Name": "Return.Booking.BookingConfirmation.Booking.BookingConfirmation",
         "Type": "BookingConfirmation",
         "IsRequired": false
@@ -7865,6 +6705,16 @@
       {
         "Name": "Return.Booking.BookingConfirmation.Booking.ReturnConfirmation.Return.Rating",
         "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Return.Booking.BookingConfirmation.Booking.ReturnConfirmation.Return.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Return.Booking.BookingConfirmation.Booking.ReturnConfirmation.Return.ReturnLocation",
+        "Type": "System.String",
         "IsRequired": false
       },
       {
@@ -7913,11 +6763,6 @@
         "IsRequired": false
       },
       {
-        "Name": "Return.Booking.BookingConfirmation.Booking.ReturnConfirmation.Return.ReturnConfirmation.ReturnLocation",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
         "Name": "Return.Booking.BookingConfirmation.Booking.ReturnConfirmation.TotalAmount",
         "Type": "System.Decimal",
         "IsRequired": false
@@ -7944,11 +6789,6 @@
       },
       {
         "Name": "Return.Booking.BookingConfirmation.Booking.ReturnConfirmation.Email",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.BookingConfirmation.Booking.ReturnConfirmation.ReturnLocation",
         "Type": "System.String",
         "IsRequired": false
       },
@@ -7980,6 +6820,16 @@
       {
         "Name": "Return.Booking.BookingConfirmation.Booking.Return.Rating",
         "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Return.Booking.BookingConfirmation.Booking.Return.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Return.Booking.BookingConfirmation.Booking.Return.ReturnLocation",
+        "Type": "System.String",
         "IsRequired": false
       },
       {
@@ -8023,6 +6873,16 @@
         "IsRequired": false
       },
       {
+        "Name": "Return.Booking.BookingConfirmation.Booking.Return.ReturnConfirmation.Return.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Return.Booking.BookingConfirmation.Booking.Return.ReturnConfirmation.Return.ReturnLocation",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
         "Name": "Return.Booking.BookingConfirmation.Booking.Return.ReturnConfirmation.Return.ReturnConfirmation",
         "Type": "Carrental.WebAPI.Models.ReturnConfirmation",
         "IsRequired": false
@@ -8055,96 +6915,6 @@
       {
         "Name": "Return.Booking.BookingConfirmation.Booking.Return.ReturnConfirmation.Email",
         "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.BookingConfirmation.Booking.Return.ReturnConfirmation.ReturnLocation",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.BookingConfirmation.Booking.UserId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.BookingConfirmation.Booking.User.Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.BookingConfirmation.Booking.User.UserName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.BookingConfirmation.Booking.User.FirstName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.BookingConfirmation.Booking.User.LastName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.BookingConfirmation.Booking.User.Password",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.BookingConfirmation.Booking.User.EmailId",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.BookingConfirmation.Booking.User.ContactNo",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.BookingConfirmation.Booking.User.Address",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.BookingConfirmation.Booking.User.AltEmail",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.BookingConfirmation.Booking.User.AltContact",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.BookingConfirmation.Booking.User.DriverLicInfo",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.BookingConfirmation.Booking.User.UserType",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.BookingConfirmation.Booking.User.FailedLoginAttempts",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.BookingConfirmation.Booking.User.IsBlocked",
-        "Type": "System.Boolean",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.BookingConfirmation.Booking.User.BlockedUntil",
-        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.BookingConfirmation.Booking.User.Bookings",
-        "Type": "System.Collections.Generic.ICollection\u00601[[Carrental.WebAPI.Models.Booking, Carrental.WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "IsRequired": false
       },
       {
@@ -8185,6 +6955,16 @@
       {
         "Name": "Return.Booking.ReturnConfirmation.Return.Rating",
         "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Return.Booking.ReturnConfirmation.Return.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Return.Booking.ReturnConfirmation.Return.ReturnLocation",
+        "Type": "System.String",
         "IsRequired": false
       },
       {
@@ -8233,11 +7013,6 @@
         "IsRequired": false
       },
       {
-        "Name": "Return.Booking.ReturnConfirmation.Return.ReturnConfirmation.ReturnLocation",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
         "Name": "Return.Booking.ReturnConfirmation.TotalAmount",
         "Type": "System.Decimal",
         "IsRequired": false
@@ -8264,11 +7039,6 @@
       },
       {
         "Name": "Return.Booking.ReturnConfirmation.Email",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.ReturnConfirmation.ReturnLocation",
         "Type": "System.String",
         "IsRequired": false
       },
@@ -8300,6 +7070,16 @@
       {
         "Name": "Return.Booking.Return.Rating",
         "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Return.Booking.Return.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Return.Booking.Return.ReturnLocation",
+        "Type": "System.String",
         "IsRequired": false
       },
       {
@@ -8343,6 +7123,16 @@
         "IsRequired": false
       },
       {
+        "Name": "Return.Booking.Return.ReturnConfirmation.Return.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Return.Booking.Return.ReturnConfirmation.Return.ReturnLocation",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
         "Name": "Return.Booking.Return.ReturnConfirmation.Return.ReturnConfirmation",
         "Type": "Carrental.WebAPI.Models.ReturnConfirmation",
         "IsRequired": false
@@ -8378,96 +7168,6 @@
         "IsRequired": false
       },
       {
-        "Name": "Return.Booking.Return.ReturnConfirmation.ReturnLocation",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.UserId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.User.Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.User.UserName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.User.FirstName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.User.LastName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.User.Password",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.User.EmailId",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.User.ContactNo",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.User.Address",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.User.AltEmail",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.User.AltContact",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.User.DriverLicInfo",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.User.UserType",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.User.FailedLoginAttempts",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.User.IsBlocked",
-        "Type": "System.Boolean",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.User.BlockedUntil",
-        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.Booking.User.Bookings",
-        "Type": "System.Collections.Generic.ICollection\u00601[[Carrental.WebAPI.Models.Booking, Carrental.WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "IsRequired": false
-      },
-      {
         "Name": "Return.ActualReturnDate",
         "Type": "System.DateTime",
         "IsRequired": false
@@ -8480,6 +7180,16 @@
       {
         "Name": "Return.Rating",
         "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Return.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Return.ReturnLocation",
+        "Type": "System.String",
         "IsRequired": false
       },
       {
@@ -8583,6 +7293,11 @@
         "IsRequired": false
       },
       {
+        "Name": "Return.ReturnConfirmation.Return.Booking.Vehicle.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
         "Name": "Return.ReturnConfirmation.Return.Booking.Vehicle.Model.ModelId",
         "Type": "System.Int32",
         "IsRequired": false
@@ -8659,6 +7374,11 @@
       },
       {
         "Name": "Return.ReturnConfirmation.Return.Booking.SpecialRequests",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Return.ReturnConfirmation.Return.Booking.UserId",
         "Type": "System.String",
         "IsRequired": false
       },
@@ -8778,6 +7498,11 @@
         "IsRequired": false
       },
       {
+        "Name": "Return.ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.Vehicle.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
         "Name": "Return.ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.Vehicle.Model.ModelId",
         "Type": "System.Int32",
         "IsRequired": false
@@ -8858,6 +7583,11 @@
         "IsRequired": false
       },
       {
+        "Name": "Return.ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
         "Name": "Return.ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.BookingConfirmation",
         "Type": "BookingConfirmation",
         "IsRequired": false
@@ -8908,11 +7638,6 @@
         "IsRequired": false
       },
       {
-        "Name": "Return.ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.ReturnConfirmation.ReturnLocation",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
         "Name": "Return.ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.Return.Id",
         "Type": "System.Int32",
         "IsRequired": false
@@ -8943,93 +7668,18 @@
         "IsRequired": false
       },
       {
+        "Name": "Return.ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.Return.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Return.ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.Return.ReturnLocation",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
         "Name": "Return.ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.Return.ReturnConfirmation",
         "Type": "Carrental.WebAPI.Models.ReturnConfirmation",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.UserId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.UserName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.FirstName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.LastName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.Password",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.EmailId",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.ContactNo",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.Address",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.AltEmail",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.AltContact",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.DriverLicInfo",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.UserType",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.FailedLoginAttempts",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.IsBlocked",
-        "Type": "System.Boolean",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.BlockedUntil",
-        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.BookingConfirmation.Booking.User.Bookings",
-        "Type": "System.Collections.Generic.ICollection\u00601[[Carrental.WebAPI.Models.Booking, Carrental.WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "IsRequired": false
       },
       {
@@ -9078,11 +7728,6 @@
         "IsRequired": false
       },
       {
-        "Name": "Return.ReturnConfirmation.Return.Booking.ReturnConfirmation.ReturnLocation",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
         "Name": "Return.ReturnConfirmation.Return.Booking.Return.Id",
         "Type": "System.Int32",
         "IsRequired": false
@@ -9113,93 +7758,18 @@
         "IsRequired": false
       },
       {
+        "Name": "Return.ReturnConfirmation.Return.Booking.Return.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Return.ReturnConfirmation.Return.Booking.Return.ReturnLocation",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
         "Name": "Return.ReturnConfirmation.Return.Booking.Return.ReturnConfirmation",
         "Type": "Carrental.WebAPI.Models.ReturnConfirmation",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.UserId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.User.Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.User.UserName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.User.FirstName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.User.LastName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.User.Password",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.User.EmailId",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.User.ContactNo",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.User.Address",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.User.AltEmail",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.User.AltContact",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.User.DriverLicInfo",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.User.UserType",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.User.FailedLoginAttempts",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.User.IsBlocked",
-        "Type": "System.Boolean",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.User.BlockedUntil",
-        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      },
-      {
-        "Name": "Return.ReturnConfirmation.Return.Booking.User.Bookings",
-        "Type": "System.Collections.Generic.ICollection\u00601[[Carrental.WebAPI.Models.Booking, Carrental.WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "IsRequired": false
       },
       {
@@ -9215,6 +7785,16 @@
       {
         "Name": "Return.ReturnConfirmation.Return.Rating",
         "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Return.ReturnConfirmation.Return.UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Return.ReturnConfirmation.Return.ReturnLocation",
+        "Type": "System.String",
         "IsRequired": false
       },
       {
@@ -9253,99 +7833,25 @@
         "IsRequired": false
       },
       {
-        "Name": "Return.ReturnConfirmation.ReturnLocation",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "UserId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "User.Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "User.UserName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "User.FirstName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "User.LastName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "User.Password",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "User.EmailId",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "User.ContactNo",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "User.Address",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "User.AltEmail",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "User.AltContact",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "User.DriverLicInfo",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "User.UserType",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "User.FailedLoginAttempts",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "User.IsBlocked",
-        "Type": "System.Boolean",
-        "IsRequired": false
-      },
-      {
-        "Name": "User.BlockedUntil",
-        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      },
-      {
-        "Name": "User.Bookings",
-        "Type": "System.Collections.Generic.ICollection\u00601[[Carrental.WebAPI.Models.Booking, Carrental.WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "IsRequired": false
-      },
-      {
         "Name": "licenseImage",
         "Type": "Microsoft.AspNetCore.Http.IFormFile",
         "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carrental.WebAPI.Controllers.BookingConfirmationController",
+    "Method": "CancelBooking",
+    "RelativePath": "api/BookingConfirmation/CancelBooking/{bookingId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bookingId",
+        "Type": "System.Int32",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -9369,6 +7875,36 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carrental.WebAPI.Controllers.BookingConfirmationController",
+    "Method": "GetAdminEarnings",
+    "RelativePath": "api/BookingConfirmation/GetAdminEarnings",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carrental.WebAPI.Controllers.BookingConfirmationController",
+    "Method": "GetAllBookingConfirmationDetails",
+    "RelativePath": "api/BookingConfirmation/GetAllBookingConfirmationDetails",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carrental.WebAPI.Controllers.BookingConfirmationController",
+    "Method": "GetAllBookingDetails",
+    "RelativePath": "api/BookingConfirmation/GetAllBookingDetails",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   },
   {
@@ -9484,6 +8020,16 @@
   },
   {
     "ContainingType": "Carrental.WebAPI.Controllers.RentalHistoryController",
+    "Method": "GetAllRentalHistory",
+    "RelativePath": "api/RentalHistory/GetAllRentalHistory",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carrental.WebAPI.Controllers.RentalHistoryController",
     "Method": "GetRentalHistory",
     "RelativePath": "api/RentalHistory/GetRentalHistory",
     "HttpMethod": "GET",
@@ -9594,6 +8140,16 @@
   },
   {
     "ContainingType": "Carrental.WebAPI.Controllers.ReturnConfirmationController",
+    "Method": "GetAllReturnDetails",
+    "RelativePath": "api/ReturnConfirmation/GetAllReturnDetails",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carrental.WebAPI.Controllers.ReturnConfirmationController",
     "Method": "GetReturnConfirmationDetails",
     "RelativePath": "api/ReturnConfirmation/GetReturnConfirmationDetails/{returnId}",
     "HttpMethod": "GET",
@@ -9626,16 +8182,26 @@
   },
   {
     "ContainingType": "Carrental.WebAPI.Controllers.UsersController",
+    "Method": "GetAllUsers",
+    "RelativePath": "api/Users/GetAllUsers",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carrental.WebAPI.Controllers.UsersController",
     "Method": "GetUser",
-    "RelativePath": "api/Users/GetUser",
+    "RelativePath": "api/Users/GetUser/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
+        "Type": "System.String",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -9677,6 +8243,48 @@
       {
         "Name": "registrationDTO",
         "Type": "Carrental.WebAPI.Models.RegistrationDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carrental.WebAPI.Controllers.UsersController",
+    "Method": "UpdateUserDetails",
+    "RelativePath": "api/Users/UpdateUserDetails/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "userUpdateDTO",
+        "Type": "Carrental.WebAPI.Models.UserUpdateDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carrental.WebAPI.Controllers.UsersController",
+    "Method": "UpdateUserStatus",
+    "RelativePath": "api/Users/UpdateUserStatus/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "statusUpdateDTO",
+        "Type": "Carrental.WebAPI.Models.UserStatusUpdateDTO",
         "IsRequired": true
       }
     ],
@@ -9738,6 +8346,11 @@
       {
         "Name": "CategoryId",
         "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "UserId",
+        "Type": "System.String",
         "IsRequired": false
       },
       {
@@ -9812,6 +8425,16 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carrental.WebAPI.Controllers.VehicleController",
+    "Method": "GetAllVehiclesWithCount",
+    "RelativePath": "api/Vehicle/GetAllVehiclesWithCount",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   },
   {
@@ -9894,6 +8517,22 @@
   },
   {
     "ContainingType": "Carrental.WebAPI.Controllers.VehicleController",
+    "Method": "SearchVehicles",
+    "RelativePath": "api/Vehicle/SearchVehicles",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "query",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carrental.WebAPI.Controllers.VehicleController",
     "Method": "UpdateVehicle",
     "RelativePath": "api/Vehicle/UpdateVehicle/{id}",
     "HttpMethod": "PUT",
@@ -9953,6 +8592,11 @@
       {
         "Name": "CategoryId",
         "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "UserId",
+        "Type": "System.String",
         "IsRequired": false
       },
       {

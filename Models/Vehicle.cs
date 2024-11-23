@@ -15,7 +15,7 @@ namespace Carrental.WebAPI.Models
         public int ModelId { get; set; }
         public int BrandId { get; set; }
         public int CategoryId { get; set; }
-
+        public string UserId { get; set; }
 
         public VehicleModel? Model { get; set; }
         public VehicleBrand? Brand { get; set; }
