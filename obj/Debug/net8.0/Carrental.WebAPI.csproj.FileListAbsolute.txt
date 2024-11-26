@@ -252,3 +252,4 @@ C:\Users\subia\source\repos\Carrental.WebAPI\obj\Debug\net8.0\refint\Carrental.W
 C:\Users\subia\source\repos\Carrental.WebAPI\obj\Debug\net8.0\Carrental.WebAPI.pdb
 C:\Users\subia\source\repos\Carrental.WebAPI\obj\Debug\net8.0\Carrental.WebAPI.genruntimeconfig.cache
 C:\Users\subia\source\repos\Carrental.WebAPI\obj\Debug\net8.0\ref\Carrental.WebAPI.dll
+C:\Users\subia\source\repos\Carrental.WebAPI\bin\Debug\net8.0\System.Net.WebSockets.WebSocketProtocol.dll

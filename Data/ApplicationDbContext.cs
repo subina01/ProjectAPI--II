@@ -23,6 +23,7 @@ namespace Carrental.WebAPI.Data
         public DbSet<VehicleImage> VehicleImages { get; set; }
         public DbSet<BookingConfirmation> BookingConfirmations { get; set; }
         public DbSet<ReturnConfirmation> ReturnConfirmations { get; set; }
+        public DbSet<Message> Messages { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<VehicleBrand>().HasKey(vb => vb.BrandId);
@@ -32,7 +33,7 @@ namespace Carrental.WebAPI.Data
             modelBuilder.Entity<Booking>().HasKey(b => b.Id);
             modelBuilder.Entity<Return>().HasKey(rc => rc.Id);
 
-           
+           modelBuilder.Entity<Message>().HasKey(rc => rc.Id);
 
             modelBuilder.Entity<Vehicle>()
                 .HasOne(v => v.Model)

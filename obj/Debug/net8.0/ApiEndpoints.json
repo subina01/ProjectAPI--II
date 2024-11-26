@@ -8019,6 +8019,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Carrental.WebAPI.Controllers.MessageController",
+    "Method": "SendMessage",
+    "RelativePath": "api/Message/send",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "messageDto",
+        "Type": "Carrental.WebAPI.Models.MessageDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Carrental.WebAPI.Controllers.RentalHistoryController",
     "Method": "GetAllRentalHistory",
     "RelativePath": "api/RentalHistory/GetAllRentalHistory",
